@@ -174,7 +174,8 @@ const forgotPassword = async (req, res, next) => {
     await user.save({ validateBeforeSave: false });
 
     // Build reset URL
-    const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const rawClientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const clientUrl = rawClientUrl.split(',')[0].trim().replace(/^['"]+|['"]+$/g, '').replace(/\/+$/, '');
     const resetUrl = `${clientUrl}/reset-password/${resetToken}`;
 
     console.log(`[Password Reset] Link generated for ${user.email}: ${resetUrl}`);
