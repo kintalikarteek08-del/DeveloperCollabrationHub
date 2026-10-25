@@ -1,0 +1,16 @@
+{
+  "name": "developer-collaboration-hub",
+  "version": "1.0.0",
+  "description": "Full-Stack MERN Developer Collaboration Platform",
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build:client": "cd client && npm run build",
+    "start:server": "cd server && npm start",
+    "seed": "cd server && npm run seed"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
