@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Code2, Lock, Mail, ArrowRight, ShieldCheck, UserCheck, CheckCircle2 } from 'lucide-react';
+import { Code2, Lock, Mail, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 const Login = () => {
@@ -31,11 +31,7 @@ const Login = () => {
     }
   };
 
-  const fillDemoAccount = (demoEmail, demoPassword) => {
-    setEmail(demoEmail);
-    setPassword(demoPassword);
-    setError('');
-  };
+
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
@@ -117,30 +113,6 @@ const Login = () => {
             </button>
           </form>
 
-          {/* Quick Demo Credentials */}
-          <div className="mt-6 pt-5 border-t border-surface-800">
-            <p className="text-[11px] font-semibold text-surface-400 mb-2.5 text-center">
-              Quick One-Click Demo Logins:
-            </p>
-            <div className="grid grid-cols-2 gap-2 text-xs">
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('karteek@devcollab.com', 'password123')}
-                className="p-2 rounded-xl bg-surface-900 border border-surface-700 hover:border-brand-500/50 text-surface-300 hover:text-white transition-all text-left flex items-center gap-1.5"
-              >
-                <UserCheck className="w-3.5 h-3.5 text-brand-400" />
-                <span className="truncate">Karteek (Dev)</span>
-              </button>
-              <button
-                type="button"
-                onClick={() => fillDemoAccount('admin@devcollab.com', 'adminpassword123')}
-                className="p-2 rounded-xl bg-surface-900 border border-surface-700 hover:border-amber-500/50 text-surface-300 hover:text-white transition-all text-left flex items-center gap-1.5"
-              >
-                <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <span className="truncate">Admin Mode</span>
-              </button>
-            </div>
-          </div>
         </div>
 
         <p className="text-center text-xs text-surface-400 mt-6">
